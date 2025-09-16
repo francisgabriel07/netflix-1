@@ -1,0 +1,89 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 60px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #8c8c8c;
+}
+
+.payment-info .card-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-info .card-details input {
+    width: 48%; /* Para que cada campo ocupe casi la mitad */
+    margin-bottom: 0;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff0b17;
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.success {
+    color: #4CAF50; /* Verde */
+}
+
+.error {
+    color: #f44336; /* Rojo */
+}
