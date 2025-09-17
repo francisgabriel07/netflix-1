@@ -1,89 +1,198 @@
+/* Estilos generales para el body y centrado */
 body {
-    background-color: #000;
-    color: #fff;
     font-family: Arial, sans-serif;
+    background-color: #36393f; /* Un color oscuro para simular el ambiente de Netflix */
+    color: #f0f0f0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column; /* Para que el logo y el contenedor se apilen */
+    align-items: center; /* Centra horizontalmente todo el contenido del body */
+    min-height: 100vh;
     margin: 0;
+    padding: 20px; /* Un poco de espacio alrededor del contenido */
+    box-sizing: border-box; /* Incluye padding en el ancho/alto */
 }
 
+/* Estilos específicos para la imagen del logo */
+body > img { /* Esto selecciona directamente la imagen que está en el body */
+    width: 180px; /* Tamaño más pequeño para el logo */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 30px; /* Espacio debajo del logo antes del contenedor */
+    margin-top: 20px; /* Un poco de espacio arriba */
+}
+
+/* Estilos para el contenedor del login/suscripción */
 .login-container {
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 60px;
-    border-radius: 10px;
-    width: 350px;
+    background-color: #1a1a1a; /* Fondo más oscuro para el contenedor */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para el formulario */
     text-align: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-h1 {
-    font-size: 2.2rem;
+.login-container h1 {
+    color: #e50914; /* Rojo de Netflix */
     margin-bottom: 10px;
 }
 
-p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
+.login-container p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #ccc;
 }
 
-input {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
+/* Estilos para los inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: calc(100% - 20px); /* Ancho completo menos padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #444;
+    border-radius: 4px;
     background-color: #333;
-    border: none;
-    border-radius: 5px;
     color: #fff;
-    box-sizing: border-box;
+    font-size: 1em;
 }
 
-input::placeholder {
-    color: #8c8c8c;
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="text"]::placeholder {
+    color: #aaa;
 }
 
-.payment-info .card-details {
+
+/* Estilos para la sección de información de pago */
+.payment-info {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.card-details {
     display: flex;
     justify-content: space-between;
+    gap: 10px; /* Espacio entre MM/AA y CVV */
 }
 
-.payment-info .card-details input {
-    width: 48%; /* Para que cada campo ocupe casi la mitad */
-    margin-bottom: 0;
+.card-details input {
+    width: 50%; /* Divide el espacio para MM/AA y CVV */
+    box-sizing: border-box; /* Asegura que el padding no exceda el 50% */
 }
 
-button {
+/* Estilos para el botón de suscripción */
+button[type="submit"] {
     width: 100%;
-    padding: 15px;
-    background-color: #e50914;
-    color: #fff;
+    padding: 12px;
+    background-color: #e50914; /* Rojo de Netflix */
+    color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-weight: bold;
+    border-radius: 4px;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #ff0b17;
+button[type="submit"]:hover {
+    background-color: #f40612; /* Rojo más intenso al pasar el ratón */
 }
 
-.hidden {
+/* Estilos para los mensajes */
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.message.hidden {
     display: none;
 }
 
-#message {
-    margin-top: 20px;
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* --- Estilos para la sección del webhook (opcional, si aún la tienes visible) --- */
+.webhook-section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.webhook-section h2 {
+    margin-top: 0;
+    color: #e50914;
+}
+.webhook-section p {
+    color: #ccc;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
+    color: #f0f0f0;
+}
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+#send-webhook {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#send-webhook:hover {
+    background-color: #0056b3;
+}
+#webhook-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    color: #f0f0f0; /* Color de texto más claro para el fondo oscuro */
 }
 
-.success {
-    color: #4CAF50; /* Verde */
+/* Asegurar que los mensajes del webhook se vean bien */
+#webhook-message.error {
+    background-color: #721c24; /* Fondo oscuro para errores */
+    color: #f8d7da;
 }
-
-.error {
-    color: #f44336; /* Rojo */
+#webhook-message.success {
+    background-color: #155724; /* Fondo oscuro para éxito */
+    color: #d4edda;
+}
+#webhook-message.info {
+    background-color: #0c5460; /* Fondo oscuro para info */
+    color: #d1ecf1;
 }
